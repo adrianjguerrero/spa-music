@@ -24,7 +24,7 @@
               <nav class="level"></nav>
               <div class="level-left">
                   <a href="" class="level-item">
-                      <span class="icon is-small">&#9658;</span>
+                      <span class="icon is-small" @click.prevent="selectedTrack">&#9658;</span>
                   </a>
               </div>
           </div>
@@ -38,6 +38,11 @@ export default {
     track: {
       type: Object,
       required: true
+    }
+  },
+  methods: {
+    selectedTrack () {
+      this.$emit('select', this.track.id);
     }
   }
 }

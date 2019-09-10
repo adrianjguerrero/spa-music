@@ -15,7 +15,7 @@
       <div class="container results" v-show="!isLoading">
         <div class="columns is-multiline">
           <div  v-for="track in tracks" :key="track.id" class="column is-3">
-            <cc-track :track="track"></cc-track>
+            <cc-track :track="track" @select="setSelectedTrack"></cc-track>
           </div>
         </div>
       </div>
@@ -43,7 +43,8 @@ export default {
     return {
       searchQuery: '',
       tracks: [],
-      isLoading: false
+      isLoading: false,
+      selectedTrack: ''
     }
   },
   methods: {
@@ -55,6 +56,9 @@ export default {
           this.tracks = res.tracks.items;
           this.isLoading = false;
         })
+    },
+    setSelectedTrack (id) {
+      this.selectedTrack = id;
     }
   },
   computed: {
