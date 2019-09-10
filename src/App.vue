@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <ch-header></ch-header>
     <section class="section">
       <nav class="navbar has-shadow">
         <div class="container">
@@ -18,11 +19,15 @@
         </div>
       </div>
     </section>
+    <cf-footer></cf-footer>
   </div>
 </template>
 
 <script>
 import trackService from './services/track';
+import ChHeader from './components/layout/Header.vue';
+import CfFooter from './components/layout/Footer.vue';
+// la importacion es como queramos tal parece
 
 export default {
   name: 'app',
@@ -34,7 +39,7 @@ export default {
   },
   methods: {
     search () {
-      if (!this.searchQuery) {return;} 
+      if (!this.searchQuery) { return; }
       trackService.search(this.searchQuery)
         .then(res => {
           this.tracks = res.tracks.items;
@@ -45,6 +50,10 @@ export default {
     searchResults () {
       return `Encontrados: ${this.tracks.length}`
     }
+  },
+  components: {
+    CfFooter,
+    ChHeader
   }
 }
 </script>
