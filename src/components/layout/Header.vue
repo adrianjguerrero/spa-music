@@ -2,7 +2,6 @@
   <section class="hero is-success">
     <div class="hero-head">
       <header class="navbar">
-        
           <div class="navbar-brand">
             <div class="nav-item">
               <strong>App2Learn</strong>
@@ -12,7 +11,6 @@
             <div class="nav-menu">
             </div>
           </div>
-        
       </header>
     </div>
     <div class="hero-body">
