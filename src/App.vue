@@ -13,7 +13,7 @@
 
       <div class="container results">
         <div class="columns is-multiline">
-          <div  v-for="track in tracks" :key="track.id" class="column">
+          <div  v-for="track in tracks" :key="track.id" class="column is-3">
             <cc-track :track="track"></cc-track>
           </div>
         </div>
