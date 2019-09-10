@@ -13,9 +13,8 @@
 
       <div class="container results">
         <div class="columns is-multiline">
-          <div v-for="track in tracks" class="is-12 column">
-            <!-- {{track.name}} - {{track.artists[0].name}} -->
-            <cc-track track="t"></cc-track>
+          <div  v-for="track in tracks" :key="track.id" class="column">
+            <cc-track :track="track"></cc-track>
           </div>
         </div>
       </div>
