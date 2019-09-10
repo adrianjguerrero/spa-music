@@ -73,6 +73,15 @@ export default {
       return `Encontrados: ${this.tracks.length}`
     }
   },
+  watch: {
+    showNotificacion () {
+      if (this.showNotificacion) {
+        setTimeout(() => {
+          this.showNotificacion = false;
+        }, 3000);
+      }
+    }
+  },
   components: {
     CcFooter,
     CcHeader,
