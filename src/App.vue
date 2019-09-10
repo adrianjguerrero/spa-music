@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <ch-header></ch-header>
+    <cc-header></cc-header>
     <section class="section">
       <nav class="navbar has-shadow">
         <div class="container">
@@ -19,14 +19,14 @@
         </div>
       </div>
     </section>
-    <cf-footer></cf-footer>
+    <cc-footer></cc-footer>
   </div>
 </template>
 
 <script>
 import trackService from './services/track';
-import ChHeader from './components/layout/Header.vue';
-import CfFooter from './components/layout/Footer.vue';
+import CcHeader from './components/layout/Header.vue';
+import CcFooter from './components/layout/Footer.vue';
 // la importacion es como queramos tal parece
 
 export default {
@@ -52,8 +52,8 @@ export default {
     }
   },
   components: {
-    CfFooter,
-    ChHeader
+    CcFooter,
+    CcHeader
   }
 }
 </script>
