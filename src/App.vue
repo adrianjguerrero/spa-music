@@ -11,7 +11,8 @@
       </nav>
       <small>{{searchResults}}</small>
 
-      <div class="container results">
+      <cc-loader v-show="isLoading"></cc-loader>
+      <div class="container results" v-show="!isLoading">
         <div class="columns is-multiline">
           <div  v-for="track in tracks" :key="track.id" class="column is-3">
             <cc-track :track="track"></cc-track>
@@ -28,6 +29,7 @@ import trackService from './services/track';
 import CcHeader from './components/layout/Header.vue';
 import CcFooter from './components/layout/Footer.vue';
 import CcTrack from './components/layout/Track.vue';
+import CcLoader from './components/shared/Loader.vue';
 // la importacion es como queramos tal parece
 // en cuanto al nombre, aqui estoy usando
 // cccomponente (custoncomponent-componente)
@@ -40,15 +42,18 @@ export default {
   data () {
     return {
       searchQuery: '',
-      tracks: []
+      tracks: [],
+      isLoading: false
     }
   },
   methods: {
     search () {
       if (!this.searchQuery) { return; }
+      this.isLoading = true;
       trackService.search(this.searchQuery)
         .then(res => {
           this.tracks = res.tracks.items;
+          this.isLoading = false;
         })
     }
   },
@@ -60,7 +65,8 @@ export default {
   components: {
     CcFooter,
     CcHeader,
-    CcTrack
+    CcTrack,
+    CcLoader
   }
 }
 </script>
