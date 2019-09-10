@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <cc-header></cc-header>
-    <section class="section">
+    <cc-notification></cc-notification>
+    <cc-loader v-show="isLoading"></cc-loader>
+    <section class="section"  v-show="!isLoading">
       <nav class="navbar has-shadow">
         <div class="container">
           <input type="text" class="input is-large" placeholder="Buscar canción" v-model="searchQuery">
@@ -11,8 +13,8 @@
       </nav>
       <small>{{searchResults}}</small>
 
-      <cc-loader v-show="isLoading"></cc-loader>
-      <div class="container results" v-show="!isLoading">
+      
+      <div class="container results">
         <div class="columns is-multiline">
           <div  v-for="track in tracks" :key="track.id" class="column is-3">
             <cc-track :class="{'is-active' : track.id === selectedTrack}" :track="track" @select="setSelectedTrack"></cc-track>
@@ -26,10 +28,13 @@
 
 <script>
 import trackService from './services/track';
+
 import CcHeader from './components/layout/Header.vue';
 import CcFooter from './components/layout/Footer.vue';
 import CcTrack from './components/layout/Track.vue';
+
 import CcLoader from './components/shared/Loader.vue';
+import CcNotification from './components/shared/Notification.vue';
 // la importacion es como queramos tal parece
 // en cuanto al nombre, aqui estoy usando
 // cccomponente (custoncomponent-componente)
@@ -70,7 +75,8 @@ export default {
     CcFooter,
     CcHeader,
     CcTrack,
-    CcLoader
+    CcLoader,
+    CcNotification
   }
 }
 </script>
