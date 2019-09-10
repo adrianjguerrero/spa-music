@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <cc-header></cc-header>
-    <cc-notification></cc-notification>
+    <cc-notification v-show="showNotificacion">
+      <p slot="body">Sin resultados-_-</p>
+    </cc-notification>
     <cc-loader v-show="isLoading"></cc-loader>
     <section class="section"  v-show="!isLoading">
       <nav class="navbar has-shadow">
@@ -12,8 +14,6 @@
         </div>
       </nav>
       <small>{{searchResults}}</small>
-
-      
       <div class="container results">
         <div class="columns is-multiline">
           <div  v-for="track in tracks" :key="track.id" class="column is-3">
@@ -49,7 +49,8 @@ export default {
       searchQuery: '',
       tracks: [],
       isLoading: false,
-      selectedTrack: ''
+      selectedTrack: '',
+      showNotificacion: 'false'
     }
   },
   methods: {
@@ -58,6 +59,7 @@ export default {
       this.isLoading = true;
       trackService.search(this.searchQuery)
         .then(res => {
+          this.showNotificacion = res.tracks.total === 0;
           this.tracks = res.tracks.items;
           this.isLoading = false;
         })
