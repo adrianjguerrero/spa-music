@@ -2,7 +2,7 @@
     <div class="container">
         <div class="columns">
             <div class="column is-5 is-offset-4">
-                <div class="notification is-danger">
+                <div class="notification" :class="type">
                     <slot name="body">Algo salio mal</slot>
                     <!-- los slost se usan para insertar html -->
                     <!-- el valor q definimos aqui es un default
@@ -12,6 +12,17 @@
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    props: {
+    type: {
+      type: String,
+      default: 'is-danger'
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 .notifcation{

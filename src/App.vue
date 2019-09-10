@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <cc-header></cc-header>
-    <cc-notification v-show="showNotificacion">
-      <p slot="body">Sin resultados-_-</p>
+    <cc-notification v-show="showNotificacion" :type="typeNotification">
+      <p slot="body">{{mesaggeNotification}}</p>
     </cc-notification>
     <cc-loader v-show="isLoading"></cc-loader>
     <section class="section"  v-show="!isLoading">
@@ -50,7 +50,9 @@ export default {
       tracks: [],
       isLoading: false,
       selectedTrack: '',
-      showNotificacion: 'false'
+      showNotificacion: 'false',
+      mesaggeNotification: '',
+      typeNotification: 'is-success'
     }
   },
   methods: {
@@ -59,13 +61,27 @@ export default {
       this.isLoading = true;
       trackService.search(this.searchQuery)
         .then(res => {
-          this.showNotificacion = res.tracks.total === 0;
+          let message, type
+          this.showNotificacion = true;
+          if (res.tracks.total) {
+            message = `Cantidad de Resultados: ${res.tracks.total}`
+            type = 'is-info'
+          } else {
+            message = 'No se encontraron resultados'
+            type = 'is-danger'
+          }
+          this.updateNotification(message, type);
           this.tracks = res.tracks.items;
           this.isLoading = false;
         })
     },
     setSelectedTrack (id) {
       this.selectedTrack = id;
+    },
+    updateNotification (message, type) {
+      this.mesaggeNotification = message
+      this.typeNotification = type
+      this.showNotification = true
     }
   },
   computed: {
