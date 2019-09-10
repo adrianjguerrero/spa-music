@@ -34,12 +34,12 @@
 
 <script>
 export default {
-    props:{
-        track: {
-            type: Object,
-            required: true
-        }
+  props: {
+    track: {
+      type: Object,
+      required: true
     }
+  }
 }
 </script>
 

@@ -14,7 +14,8 @@
       <div class="container results">
         <div class="columns is-multiline">
           <div v-for="track in tracks" class="is-12 column">
-            {{track.name}} - {{track.artists[0].name}}
+            <!-- {{track.name}} - {{track.artists[0].name}} -->
+            <cc-track track="t"></cc-track>
           </div>
         </div>
       </div>
@@ -27,7 +28,13 @@
 import trackService from './services/track';
 import CcHeader from './components/layout/Header.vue';
 import CcFooter from './components/layout/Footer.vue';
+import CcTrack from './components/layout/Track.vue';
 // la importacion es como queramos tal parece
+// en cuanto al nombre, aqui estoy usando
+// cccomponente (custoncomponent-componente)
+// vue hace el proceso de llevarlo a kebab-case
+// por nostros, entonces podemos decir
+// CcComponente y luego <cc-componente>
 
 export default {
   name: 'app',
@@ -53,7 +60,8 @@ export default {
   },
   components: {
     CcFooter,
-    CcHeader
+    CcHeader,
+    CcTrack
   }
 }
 </script>
