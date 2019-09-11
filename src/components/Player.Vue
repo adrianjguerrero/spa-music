@@ -1,14 +1,14 @@
 <template>
   <div class="content">
       <p class="is-128x128">
-          <img src="" alt="album image">
+          <img :src="track.album.images[0].url" alt="album image">
       </p>
       <p>
-          <strong>{{}}</strong>
-          <small>{{}}</small>
+          <strong>{{track.name}}</strong>
+          <small>{{track.duration_ms}}</small>
       </p>
       <p>
-          <audio src="" controls></audio>
+          <audio :src="track.preview_url" controls></audio>
       </p>
   </div>
 </template>
@@ -20,6 +20,11 @@ export default {
 
       track: {}
     }
+  },
+  created () {
+    this.$bus.$on('set-track', (track) => {
+      this.track = track;
+    })
   }
 }
 </script>
