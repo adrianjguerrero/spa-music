@@ -41,7 +41,6 @@ export default {
 
   .navbar-end{
     .navbar-menu{
-      
       .nav-link{
         margin-right: 1em;
         color: white;
