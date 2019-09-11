@@ -50,7 +50,7 @@ export default {
       tracks: [],
       isLoading: false,
       selectedTrack: '',
-      showNotificacion: 'false',
+      showNotificacion: false,
       mesaggeNotification: '',
       typeNotification: 'is-success'
     }
