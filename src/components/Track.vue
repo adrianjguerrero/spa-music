@@ -26,6 +26,9 @@
                   <a href="" class="level-item">
                       <span class="icon is-small" @click.prevent="selectedTrack">&#9658;</span>
                   </a>
+                <a href="" class="leve-item">
+                      <span class="icon is-small" @click.prevent="goToTrack(track.id)">ver mas</span>
+                </a>
               </div>
           </div>
       </div>
@@ -47,6 +50,10 @@ export default {
       // asi, ya que bus es una instanciacion de Vue,
       // puede usar los mismos eventos, por lo tanto
       // cualquiera q lo este escuchando, recibira estas cosas
+    },
+    goToTrack (id) {
+      this.$router.push({ name: 'track', params: { id } });
+      // nos referimos a la ruta por el name
     }
   }
 }
