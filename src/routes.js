@@ -1,9 +1,8 @@
+import Router from 'vue-router';
 import Search from './components/Search.vue';
 
-const routes = [{
+export default new Router [{
   path: '/',
-  component: 'Search',
+  component: Search,
   name: 'search'
 }]
-
-export default routes;

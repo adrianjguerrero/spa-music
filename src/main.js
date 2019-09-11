@@ -3,20 +3,17 @@ import VueRouter from 'vue-router';
 // al no tener barras se entiende como dependencia de npm
 import App from './App.vue';
 
-import routes from './routes';
 
 import EventBus from './plugins/event-bus';
 
 Vue.config.productionTip = false
 
 Vue.use(VueRouter);
-// le decimos a vue q use el plugin
-Vue.use(EventBus);
 
-const router = VueRouter({routes});
-// recordar q esta simplificado por es6 {routes:routes}
+Vue.use(EventBus);
+// le decimos a vue q use el plugin q creamos
+
 
 new Vue({
-  render: h => h(App),
-  router
+  render: h => h(App)
 }).$mount('#app')

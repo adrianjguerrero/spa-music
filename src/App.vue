@@ -7,7 +7,6 @@
 </template>
 
 <script>
-
 import CcHeader from './components/layout/Header.vue';
 import CcFooter from './components/layout/Footer.vue';
 // la importacion es como queramos tal parece
@@ -19,7 +18,7 @@ import CcFooter from './components/layout/Footer.vue';
 
 export default {
   name: 'app',
-   components: {
+  components: {
     CcFooter,
     CcHeader
   }
