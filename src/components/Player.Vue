@@ -29,6 +29,9 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+img{
+    width: 124px;
+    border-radius: 50%;
+}
 </style>

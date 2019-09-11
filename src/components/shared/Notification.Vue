@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="columns">
-            <div class="column is-5 is-offset-4">
+            <div class="column is-4 is-offset-4">
                 <div class="notification" :class="type">
                     <slot name="body">Algo salio mal</slot>
                     <!-- los slost se usan para insertar html -->

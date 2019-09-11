@@ -17,7 +17,8 @@
       <div class="container results">
         <div class="columns is-multiline">
           <div  v-for="track in tracks" :key="track.id" class="column is-3">
-            <cc-track :class="{'is-active' : track.id === selectedTrack}" :track="track" @select="setSelectedTrack"></cc-track>
+            <cc-track :class="{'is-active' : track.id === selectedTrack}" 
+            :track="track" @select="setSelectedTrack"></cc-track>
           </div>
         </div>
       </div>
@@ -116,7 +117,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 
 .results{
