@@ -31,7 +31,7 @@ import trackService from './services/track';
 
 import CcHeader from './components/layout/Header.vue';
 import CcFooter from './components/layout/Footer.vue';
-import CcTrack from './components/layout/Track.vue';
+import CcTrack from './components/Track.vue';
 
 import CcLoader from './components/shared/Loader.vue';
 import CcNotification from './components/shared/Notification.vue';
