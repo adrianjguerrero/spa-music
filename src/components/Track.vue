@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card" v-if="track && track.album">
       <div class="card-image">
           <figure class="image is-1by1">
               <img :src="track.album.images[0].url" alt="album image">
