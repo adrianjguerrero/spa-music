@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div class="content" v-if="track && track.album">
       <p class="is-128x128">
           <img :src="track.album.images[0].url" alt="album image">
       </p>

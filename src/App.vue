@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <cc-header></cc-header>
-    <router-vie></router-vie>
+    <router-view></router-view>
     <cc-footer></cc-footer>
   </div>
 </template>
