@@ -15,7 +15,7 @@
 
 <script>
 export default {
-    props: {
+  props: {
     type: {
       type: String,
       default: 'is-danger'
