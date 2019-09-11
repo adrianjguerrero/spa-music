@@ -18,6 +18,16 @@
             <h1 class="title">App</h1>
             <h2>Vuena musica</h2>
         </div>
+        <cc-player></cc-player>
     </div>
   </section>
 </template>
+
+<script>
+import CcPlayer from './../Player.vue';
+export default {
+  components: {
+    CcPlayer
+  }
+}
+</script>
