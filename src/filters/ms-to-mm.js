@@ -5,7 +5,7 @@ const addZero = number =>
 
 function converMsToMm (ms) {
   let min = Math.floor(ms / 60000);
-  let sec = ((ms % 60000 / 1000).toFixed(0)); 
+  let sec = ((ms % 60000 / 1000).toFixed(0));
   min = addZero(min);
   sec = addZero(sec);
 
