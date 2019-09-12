@@ -14,29 +14,25 @@ import trackService from './../services/track';
 import CcTrack from './Track.vue'
 import CcLoader from './shared/Loader.vue'
 export default {
-    components: {
-        CcTrack,
-        CcLoader
-    },
-    data () {
-        return {
-            track: {},
-            isLoading: true
-        }
-    },
-    created () {
-        const id = this.$route.params.id;
-        this.isLoading = true;
-        trackService.getById(id)
-         .then(res => {
-             this.track = res
-             this.isLoading = false;
-            });
+  components: {
+    CcTrack,
+    CcLoader
+  },
+  data () {
+    return {
+      track: {},
+      isLoading: true
     }
+  },
+  created () {
+    const id = this.$route.params.id;
+    this.isLoading = true;
+    trackService.getById(id)
+      .then(res => {
+        this.track = res
+        this.isLoading = false;
+      });
+  }
 
 }
 </script>
-
-<style>
-
-</style>

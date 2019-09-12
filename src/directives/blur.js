@@ -8,7 +8,6 @@ function setBlur (el, binding) {
 
   el.querySelectorAll('button').forEach(btn => {
     if (!binding.value) {
-
       btn.setAttribute('disabled', true);
       btn.style.pointerEvents = 'none';
     } else {
