@@ -8,8 +8,8 @@
               <img :src="track.album.images[0].url" alt="album image">
             </p>
             <p>
-              <button class="is-primary is-large">
-                <span class="icon" @click="selectedTrack"></span>
+              <button class="button is-primary is-large">
+                <span class="icon" @click="selectedTrack">&#9658;</span>
               </button>
             </p>
           </figure>
