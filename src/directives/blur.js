@@ -3,8 +3,8 @@ const blur = {}
 function setBlur (el, binding) {
   // las directivas reciben 4 parametros, pero aqui solo ocupareos 2
 
-  el.style.filter = !binding.value ? 'filter(3px)' : 'none';
-  el.style.cursor = !binding.value ? 'not-allwed' : 'inherit';
+  el.style.filter = !binding.value ? 'blur(3px)' : 'none';
+  el.style.cursor = !binding.value ? 'not-allowed' : 'inherit';
 
   el.querySelectorAll('button').forEach(btn => {
     if (!binding.value) {
