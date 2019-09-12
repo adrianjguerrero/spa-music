@@ -10,8 +10,10 @@ Vue.config.productionTip = false
 Vue.use(VueRouter);
 
 const router = new VueRouter({
-  routes: Routes
-})
+  routes: Routes,
+  mode: 'history'
+});
+// con history le decimos a vue q use el hisotry nativo
 
 Vue.use(EventBus);
 
