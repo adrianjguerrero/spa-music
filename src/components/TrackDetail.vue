@@ -1,7 +1,7 @@
 <template>
 <div class="containers">
     <cc-loader v-show="isLoading"></cc-loader>
-    <div class="columns">
+    <div class="columns" v-if="track && track.album">
         <div class="column is-3 has-text-centered">
           <figure class="media-left">
             <p class="image">
@@ -13,7 +13,6 @@
               </button>
             </p>
           </figure>
-            
         </div>
         <div class="column is-8">
           <div class="panel">
@@ -26,7 +25,7 @@
                   <div class="content">
                     <h2>Artistas:</h2>
                     <ul>
-                      <li v-for="(value, index) in track.artists">
+                      <li v-for="(value, index) in track.artists" :key="index">
                         <strong>{{index + 1}}: <span>{{value.name}}</span></strong>
                       </li>
                     </ul>
