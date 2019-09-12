@@ -4,8 +4,8 @@
           <img :src="track.album.images[0].url" alt="album image">
       </p>
       <p>
-          <strong>{{track.name}}</strong>
-          <small>{{track.duration_ms}}</small>
+          <strong>{{track.name}} </strong>
+          <small>{{track.duration_ms | ms-to-mm}}</small>
       </p>
       <p>
           <audio :src="track.preview_url" controls></audio>
