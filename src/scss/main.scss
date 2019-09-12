@@ -1,1 +1,13 @@
 @import 'bulma';
+
+.move-enter-active, .move-leave-active{
+    transform: translateX(0);
+    transition: transform 0.5s ease-in-out;
+}
+
+.move-enter, .move-leave-to{
+    transform: translateX(100%);
+}
+
+// forma de nombrar las clases de animaciones, .nombre.enter.active
+// y asi con los otros estados q ofrece vue

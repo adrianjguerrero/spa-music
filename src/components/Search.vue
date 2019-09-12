@@ -1,8 +1,10 @@
 <template>
   <main>
-    <cc-notification v-show="showNotificacion" :type="typeNotification">
-      <p slot="body">{{mesaggeNotification}}</p>
-    </cc-notification>
+    <transition name="move">
+      <cc-notification v-show="showNotificacion" :type="typeNotification">
+        <p slot="body">{{mesaggeNotification}}</p>
+      </cc-notification>
+    </transition>
     <cc-loader v-show="isLoading"></cc-loader>
     <section class="section"  v-show="!isLoading">
       <nav class="navbar has-shadow">
