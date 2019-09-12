@@ -1,13 +1,13 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Routes from './routes';
+import Routes from '@/routes';
 // al no tener barras se entiende como dependencia de npm
-import App from './App.vue';
-import EventBus from './plugins/event-bus';
+import App from '@/App.vue';
+import EventBus from '@/plugins/event-bus';
 
-import msToMm from './filters/ms-to-mm';
+import msToMm from '@/filters/ms-to-mm';
 
-import blur from './directives/blur';
+import blur from '@/directives/blur';
 
 Vue.config.productionTip = false
 

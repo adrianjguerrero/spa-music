@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import CcHeader from './components/layout/Header.vue';
-import CcFooter from './components/layout/Footer.vue';
+import CcHeader from '@/components/layout/Header.vue';
+import CcFooter from '@/components/layout/Footer.vue';
 // la importacion es como queramos tal parece
 // en cuanto al nombre, aqui estoy usando
 // cccomponente (custoncomponent-componente)

@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import CcPlayer from './../Player.vue';
+import CcPlayer from '@/components/Player.vue';
 export default {
   components: {
     CcPlayer

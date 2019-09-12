@@ -25,12 +25,12 @@
 </template>
 
 <script>
-import trackService from './../services/track';
+import trackService from '@/services/track';
 
-import CcTrack from './Track.vue';
+import CcTrack from '@/components/Track.vue';
 
-import CcLoader from './shared/Loader.vue';
-import CcNotification from './shared/Notification.vue';
+import CcLoader from '@/components/shared/Loader.vue';
+import CcNotification from '@/components/shared/Notification.vue';
 // la importacion es como queramos tal parece
 // en cuanto al nombre, aqui estoy usando
 // cccomponente (custoncomponent-componente)

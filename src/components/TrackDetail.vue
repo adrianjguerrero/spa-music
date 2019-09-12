@@ -10,9 +10,9 @@
 </template>
 
 <script>
-import trackService from './../services/track';
-import CcTrack from './Track.vue'
-import CcLoader from './shared/Loader.vue'
+import trackService from '@/services/track';
+import CcTrack from '@/components/Track.vue'
+import CcLoader from '@/components/shared/Loader.vue'
 export default {
   components: {
     CcTrack,
