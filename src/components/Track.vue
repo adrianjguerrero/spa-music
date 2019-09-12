@@ -36,7 +36,10 @@
 </template>
 
 <script>
+import trackMixin from '@/mixins/track';
+
 export default {
+  mixins: [trackMixin],
   props: {
     track: {
       type: Object,

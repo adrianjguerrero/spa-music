@@ -47,11 +47,13 @@
 
 <script>
 import trackService from '@/services/track';
+import trackMixin from '@/mixins/track';
 import CcLoader from '@/components/shared/Loader.vue'
 export default {
   components: {
     CcLoader
   },
+  mixins: [trackMixin],
   data () {
     return {
       track: {},
