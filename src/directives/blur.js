@@ -25,3 +25,5 @@ blur.install = function (Vue) {
     }
   })
 }
+
+export default blur;

@@ -16,7 +16,7 @@
       <div class="container results">
         <div class="columns is-multiline">
           <div  v-for="track in tracks" :key="track.id" class="column is-3">
-            <cc-track :class="{'is-active' : track.id === selectedTrack}" :track="track" @select="setSelectedTrack"></cc-track>
+            <cc-track :class="{'is-active' : track.id === selectedTrack}" :track="track" @select="setSelectedTrack" v-blur="track.preview_url"></cc-track>
           </div>
         </div>
       </div>
