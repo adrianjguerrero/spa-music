@@ -23,12 +23,12 @@
               <small>{{track.duration_ms | ms-to-mm}}</small>
               <nav class="level"></nav>
               <div class="level-left">
-                  <a href="" class="level-item">
-                      <span class="icon is-small" @click.prevent="selectedTrack">&#9658;</span>
-                  </a>
-                <a href="" class="leve-item">
-                      <span class="icon is-small" @click.prevent="goToTrack(track.id)">ver mas</span>
-                </a>
+                  <button class="level-item button is-primary">
+                      <span class="icon is-small" @click="selectedTrack">&#9658;</span>
+                  </button>
+                <button class="leve-item button is-link">
+                      <span class="icon" @click="goToTrack(track.id)">ver mas</span>
+                </button>
               </div>
           </div>
       </div>
@@ -59,6 +59,17 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
+    .level-left{
+      width: 80%;
+      .is-link{
+        flex-grow: 1;
+      }
+    }
+}
 </style>
