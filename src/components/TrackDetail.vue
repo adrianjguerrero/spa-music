@@ -45,7 +45,8 @@
 </template>
 
 <script>
-import { mapState, mapActions, mapGetters} from 'vuex';
+
+import { mapState, mapActions, mapGetters } from 'vuex';
 import trackMixin from '@/mixins/track';
 import CcLoader from '@/components/shared/Loader.vue'
 export default {
@@ -77,10 +78,8 @@ export default {
       // es diferente del q viene, hacer la peticion
       this.isLoading = true;
       this.getTrackById({ id })
-        .then(() => this.isLoading = false)
+        .then(() => { this.isLoading = false })
     }
-    
   }
-
 }
 </script>

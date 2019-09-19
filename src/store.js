@@ -11,7 +11,9 @@ const store = new Vuex.Store({
   },
   getters: {
     trackTitle (state) {
-      if(!state.track.name) { return ''; }
+      if (!state.track.name) {
+        return '';
+      }
       return `${state.track.name} - ${state.track.artists[0].name}`
     }
   },
