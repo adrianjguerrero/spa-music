@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import trackService from '@/servcies/track'
+import trackService from '@/services/track'
 
 Vue.use(Vuex);
 
@@ -17,13 +17,13 @@ const store = new Vuex.Store({
   actions: {
     getTrackById (context, payload) {
       return trackService.getById(payload.id)
-      .then(rest => {
-        context.commit('setTrack', res);
-        // context representa el store, entonces aqui estamos haciendo llamado
-        // a la function (mutation) setTrack
-        // se 'comitean' porq asi se lleva un rastro
-        return res;
-      });
+        .then(res => {
+          context.commit('setTrack', res);
+          // context representa el store, entonces aqui estamos haciendo llamado
+          // a la function (mutation) setTrack
+          // se 'comitean' porq asi se lleva un rastro
+          return res;
+        });
     }
 
   }
