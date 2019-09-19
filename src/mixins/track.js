@@ -1,11 +1,9 @@
 const trackMixin = {
   methods: {
     selectedTrack () {
-      this.$emit('select', this.track.id);
-      this.$bus.$emit('set-track', this.track);
-      // asi, ya que bus es una instanciacion de Vue,
-      // puede usar los mismos eventos, por lo tanto
-      // cualquiera q lo este escuchando, recibira estas cosas
+      if (!this.track.preview_url) { return; }
+
+      this.$store.commit('setTrack', this.track);
     }
   }
 

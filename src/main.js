@@ -1,8 +1,11 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Routes from '@/routes';
 // al no tener barras se entiende como dependencia de npm
+import Routes from '@/routes';
 import App from '@/App.vue';
+
+import store from '@/store';
+
 import EventBus from '@/plugins/event-bus';
 
 import msToMm from '@/filters/ms-to-mm';
@@ -28,5 +31,6 @@ const router = new VueRouter({
 // le decimos a vue q use el plugin q creamos
 new Vue({
   render: h => h(App),
-  router
+  router,
+  store
 }).$mount('#app')
