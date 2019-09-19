@@ -15,6 +15,7 @@
 
 <script>
 import { mapState } from 'vuex';
+// nos permite mapear para usar los state
 export default {
   computed: {
     ...mapState(['track'])

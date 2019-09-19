@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import trackService from '@/services/track';
+import { mapState, mapActions} from 'vuex';
 import trackMixin from '@/mixins/track';
 import CcLoader from '@/components/shared/Loader.vue'
 export default {
@@ -55,18 +55,30 @@ export default {
   mixins: [trackMixin],
   data () {
     return {
-      track: {},
-      isLoading: true
+      isLoading: false
     }
+  },
+  computed: {
+    ...mapState(['track'])
+    /*
+     * gracias a esto, creamos una copia de lo que ya hay en nuestro state
+     * de forma q si ya tenemos la cancion, no vamos a tener q hacer una peticion
+     * para conseguirla
+     */
+  },
+  methods: {
+    ...mapActions(['getTrackById'])
   },
   created () {
     const id = this.$route.params.id;
-    this.isLoading = true;
-    trackService.getById(id)
-      .then(res => {
-        this.track = res
-        this.isLoading = false;
-      });
+    if (!this.track || !this.track.id || this.track.id !== id) {
+      // si no hay cancion, o no tiene id, o el id guardado
+      // es diferente del q viene, hacer la peticion
+      this.isLoading = true;
+      this.getTrackById({ id })
+        .then(() => this.isLoading = false)
+    }
+    
   }
 
 }
